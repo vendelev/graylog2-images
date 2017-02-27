@@ -1,6 +1,6 @@
 FROM java:8-jre
 
-ARG GRAYLOG_VERSION
+ARG GRAYLOG_VERSION=2.2.1
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/jre
 ENV GRAYLOG_SERVER_JAVA_OPTS "-Xms1g -Xmx2g -XX:NewRatio=1 -XX:MaxMetaspaceSize=256m -server -XX:+ResizeTLAB -XX:+UseConcMarkSweepGC -XX:+CMSConcurrentMTEnabled -XX:+CMSClassUnloadingEnabled -XX:+UseParNewGC -XX:-OmitStackTraceInFastThrow"

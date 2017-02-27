@@ -23,6 +23,7 @@ if [ "$1" = 'graylog' -a "$(id -u)" = '0' ]; then
   # Start Graylog server
   set -- gosu graylog "$JAVA_HOME/bin/java" $GRAYLOG_SERVER_JAVA_OPTS \
       -jar \
+      -Djava.net.preferIPv4Stack=true \
       -Dlog4j.configurationFile=/usr/share/graylog/data/config/log4j2.xml \
       -Djava.library.path=/usr/share/graylog/lib/sigar/ \
       -Dgraylog2.installation_source=docker /usr/share/graylog/graylog.jar \

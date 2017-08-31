@@ -32,6 +32,8 @@ RUN set -x \
   && rm /usr/share/graylog.tgz \
   && setcap 'cap_net_bind_service=+ep' $JAVA_HOME/bin/java
 
+RUN cd /usr/share/graylog/plugin \
+  && wget https://github.com/sivasamyk/graylog-plugin-output-webhdfs/releases/download/1.0.1/graylog-plugin-output-webhdfs-1.0.1.jar
 
 ENV PATH /usr/share/graylog/bin:$PATH
 WORKDIR /usr/share/graylog
